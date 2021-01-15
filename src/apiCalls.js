@@ -1,8 +1,8 @@
 
 export const getAllCategories = () => {
-    return fetch("https://api.publicapis.org/categories")
+    fetch("https://api.publicapis.org/categories")
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => console.log(data))//returns an array of strings
 }
 
 export const getCategoryEntries = (category) => {
