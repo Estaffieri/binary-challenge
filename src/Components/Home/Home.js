@@ -1,54 +1,21 @@
 import React, { Component } from "react";
 import "./Home.css";
-import ApiDetails from "../ApiDetails/ApiDetails";
-import { getAllCategories, getCategoryEntries } from "../../apiCalls";
+import Search from "../Search/Search";
 
 
 class Home extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            categories: [],
-            focus: {}
-        }
+        this.state = {}
 
     }
-
-    componentDidMount() {
-
-        this.setState(getAllCategories())
-        console.log(this.state.categories)
-
-        
-    }
-
-    selectCategory() {
-        getCategoryEntries(this.props.category)
-        .then(selectedCategory => {
-            this.setState.focus({focus: selectedCategory.category})
-        })
-    }
-
-    displayCategories = () => {
-        const cats = this.state.categories.map(category => {
-            return (<li>{category}</li>)
-        })
-        return cats
-    }
-  
 
 
     render() {
         return (
-            <section className="category-container">
+            <section className="Home">
                 <h1>"Home"</h1>
-                <nav>
-                    <ul>
-                        {this.displayCategories()}
-                    </ul>
-
-                </nav>
-                <ApiDetails />
+                <Search />
 
             </section>
 
