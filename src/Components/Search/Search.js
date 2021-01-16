@@ -3,6 +3,8 @@ import './Search.css';
 import { getAllCategories, getCategoryEntries, getRandomApi } from "../../apiCalls";
 import DetailCard from "../DetailCard/DetailCard";
 
+/*This is the heart of the application and will provide the most value to our users*/
+
 class Search extends Component {
     constructor() {
         super()
