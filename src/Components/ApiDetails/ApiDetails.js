@@ -1,15 +1,10 @@
 import React from 'react';
 import "./ApiDetails.css";
 
-const ApiDetails = ({API, Auth, HTTPS, Cors, Link, Category}) => {
+const ApiDetails = () => {
     return (
         <section className="entry-card">
-            <h2 className="api-name">{API}</h2>
-            <p>{Auth}</p>
-            <p>{HTTPS}</p>
-            <p>{Cors}</p>
-            <p>{Link}</p>
-            <p>{Category}</p>
+            <h2 className="api-name">I am a detail card</h2>
         </section>
 
     )

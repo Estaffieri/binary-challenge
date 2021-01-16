@@ -1,7 +1,6 @@
 import React from "react";
 import './App.css';
 import Home from "../Home/Home";
-import Search from "../Search/Search";
 
 function App() {
 

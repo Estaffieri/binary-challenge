@@ -2,13 +2,13 @@
 export const getAllCategories = () => {
     fetch("https://api.publicapis.org/categories")
         .then(response => response.json())
-        .then(data => console.log(data))//returns an array of strings
+        .then(data => console.log(data))
 }
 
 export const getCategoryEntries = (category) => {
     return fetch(`https://api.publicapis.org/entries?category=${category}`)
         .then(response => response.json())
-        .then(data => console.log(data.title))
+        .then(data => console.log(data))
 }
 
 export const getRandomApi = () => {
