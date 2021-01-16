@@ -22,18 +22,14 @@ class Search extends Component {
     componentDidMount () {
         const categoryNames = getAllCategories()
         this.setState({categories: categoryNames.data})
-        console.log(this.state.categories)
     }
 
-    // getCategories() {
-    //     const categoryNames = getAllCategories();
-    //     this.setState({categories: categoryNames})
-    // }
-
+  
    addCategoriesforSearch() {
-        this.state.categories.map((category, i) => {
+         this.state.categories.map((category, i) => {
            return <option value="{category}" key={i}>{category}</option>
        })
+       
    }
 
     getNewRandom() {
