@@ -6,8 +6,8 @@ import Search from "../Search/Search";
 
 
 class Home extends Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {}
 
     }
@@ -16,7 +16,7 @@ class Home extends Component {
     render() {
         return (
             <section className="Home">
-                <h1>"Home"</h1>
+                <h1>Hello from Home</h1>
                 <Search />
 
             </section>

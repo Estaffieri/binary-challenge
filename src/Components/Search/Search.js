@@ -21,24 +21,24 @@ class Search extends Component {
         }
     }
 
-    componentDidMount () {
-        const categoryNames = getAllCategories()
-        this.setState({categories: categoryNames.data})
-    }
+    componentDidMount = async () => {
+        await getAllCategories()
+            .then((data) => this.setState({ categories: data }))
+            .catch((error) => alert(error.message));
+    };
 
   
-   addCategoriesforSearch() {
-         this.state.categories.map((category, i) => {
+   addCategoriesforSearch = () => {
+         const categoryOptions = this.state.categories.map((category, i) => {
            return <option value="{category}" key={i}>{category}</option>
        })
-       
+       return categoryOptions
    }
 
-    getNewRandom() {
-       const data = getRandomApi();
-       this.setState({random: data.entries})
-       
-
+    getNewRandom = async () => {
+        await getRandomApi()
+            .then((data) => this.setState({ random: data.entries }))
+            .catch((error) => alert(error.message));
     };
 
     render () {   
@@ -79,7 +79,7 @@ class Search extends Component {
                 </div>
             </section>
                 <section className="search-results">
-                <DetailCard />
+                    <div>{}</div>
                 </section>
         </section>
 
