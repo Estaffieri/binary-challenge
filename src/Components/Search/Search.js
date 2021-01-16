@@ -41,6 +41,12 @@ class Search extends Component {
             .catch((error) => alert(error.message));
     };
 
+   displayRandomResult = () => {
+       if (this.state.random !== {}) {
+           return <DetailCard {...this.state.random} />
+       }
+   }
+
     render () {   
     
         return (
@@ -79,7 +85,7 @@ class Search extends Component {
                 </div>
             </section>
                 <section className="search-results">
-                    <div>{}</div>
+                    <div>{this.displayRandomResult}</div>
                 </section>
         </section>
 
