@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import './Search.css';
+import './SearchForm.css';
 import { getAllCategories, getCategoryEntries, getRandomApi } from "../../apiCalls";
 import DetailCard from "../DetailCard/DetailCard";
 
 /*This is the heart of the application and will provide the most value to our users*/
 
-class Search extends Component {
+class SearchForm extends Component {
     constructor() {
         super()
         this.state = {
             categories: [],
-            random: {},
+            random: [],
             search: {
                 category: "",
                 auth: "",
@@ -30,7 +30,7 @@ class Search extends Component {
   
    addCategoriesforSearch = () => {
          const categoryOptions = this.state.categories.map((category, i) => {
-           return <option value="{category}" key={i}>{category}</option>
+             return <option value="{category}" key={i}>{category}</option>
        })
        return categoryOptions
    }
@@ -42,20 +42,28 @@ class Search extends Component {
     };
 
    displayRandomResult = () => {
-       if (this.state.random !== {}) {
-           return <DetailCard {...this.state.random} />
+       if (this.state.random.length !== 0) {
+           return <div>
+                <DetailCard {...this.state.random} /> 
+                </div>
        }
+   }
+
+  handleChange = (event) => {
+    event.preventDefault()
+    console.log(event)
+
    }
 
     render () {   
     
         return (
         <section className="api-results-container">
-            <section role="search" className="search-box">
+            <form role="search" className="search-box">
                 <label htmlFor="search-box">Lets find you an API!</label>
                 <p>Category:</p>
-                <select name="category" id="category-selection">
-                    <option value="any">Any</option>
+                    <select name="category" id="category-selection">
+                        <option value="pick-one">Pick One</option>
                     {this.addCategoriesforSearch()}
                 </select>
                 <p>Auth:</p>
@@ -83,10 +91,7 @@ class Search extends Component {
                     <div className="spacer"></div>
                     <button onClick={this.getNewRandom}>Get Random API</button>
                 </div>
-            </section>
-                <section className="search-results">
-                    <div>{this.displayRandomResult}</div>
-                </section>
+            </form>
         </section>
 
           
@@ -95,4 +100,4 @@ class Search extends Component {
 }
 
 
-export default Search;
+export default SearchForm;
