@@ -14,14 +14,12 @@ class Home extends Component {
 
     }
 
-    getSearchResults = async (category, auth, https, cors) => {
+    getSearchResults = async (category) => {
        const catResults = await getCategoryEntries(category)
-       const catFilter = catResults.entries.category.filter(category => category.Category === category)
-    //    const authFilter = catResults.entries.filter(auth => auth.Auth === auth)
-    //    const httpsFilter = catResults.entries.filter(https => https.HTTPS === https)
-    //    const corsFilter = catResults.entries.filter(cors => cors.Cors === cors)
-
-        console.log(catResults.entries, catFilter)
+       const catFilter = catResults.entries.filter(entry => entry.Category === category)
+     
+        console.log("matching categories", catFilter)
+        
 
         //filter
         //set it state in home

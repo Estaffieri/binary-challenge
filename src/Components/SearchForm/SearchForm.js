@@ -55,10 +55,10 @@ class SearchForm extends Component {
 
    handleSubmit = (e) => {
        e.preventDefault()
-       if (this.state.category !== "" && this.state.https !== "" && this.state.cors !== "") {
-           this.props.getSearchResults(this.state.category, this.state.auth, this.state.https, this.state.cors)
+       if (this.state.category !== "") {
+           this.props.getSearchResults(this.state.category)
        } else {
-           alert("Please select an option from each dropdown")
+           alert("Please select a category")
        }
    }
 
@@ -72,27 +72,6 @@ class SearchForm extends Component {
                     <select name="category" id="category-selection" onChange={this.handleChange}>
                         <option value="">Pick One</option>
                     {this.addCategoriesforSearch()}
-                </select>
-                <p>Auth:</p>
-                    <select name="auth" id="auth-selection" onChange={this.handleChange}>
-                        <option value="">Pick One</option>
-                        <option value="apiKey">apiKey</option>
-                        <option value="0Auth">0Auth</option>
-                        <option value="No">No</option>
-                        <option value="">No Value</option>
-                </select>
-                <p>HTTPS:</p>
-                    <select name="https" id="https-selection" onChange={this.handleChange}>
-                        <option value="">Pick One</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                </select>
-                <p>CORS:</p>
-                    <select name="cors" id="cors-selection" onChange={this.handleChange}>
-                        <option value="">Pick One</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                        <option value="unknown">Unknown</option>
                 </select>
                 <div className="button-container">
                         <button onClick={(e) => this.handleSubmit(e)}>Search</button>
