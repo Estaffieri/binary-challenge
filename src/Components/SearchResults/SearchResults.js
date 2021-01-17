@@ -4,8 +4,8 @@ import DetailCard from "../DetailCard/DetailCard";
 
 
 class SearchResults extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {}
     }
     render() {

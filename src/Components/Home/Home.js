@@ -10,30 +10,24 @@ import { getCategoryEntries } from "../../apiCalls";
 class Home extends Component {
     constructor() {
         super()
-        this.state = {}
+        this.state = {
+            entries: []
+        }
 
     }
 
     getSearchResults = async (category) => {
-       const catResults = await getCategoryEntries(category)
-       const catFilter = catResults.entries.filter(entry => entry.Category === category)
-     
-        console.log("matching categories", catFilter)
-        
-
-        //filter
-        //set it state in home
-        //pass as prop to SearchResults
-
+        await getCategoryEntries(category)
+           .then((data) => this.setState({ entries: data.entries }))
+           .catch((error) => alert(error.message));
     }
-
 
     render() {
         return (
             <section className="Home">
                 <h1>Hello from Home</h1>
                 <SearchForm getSearchResults={this.getSearchResults} />
-                <SearchResults />
+                <SearchResults showMe={this.state.entries} />
             </section>
 
         )

@@ -10,11 +10,7 @@ class SearchForm extends Component {
         this.state = {
             categories: [],
             random: [],
-            category: "",
-            auth: "",
-            https: "",
-            cors: ""
-
+            category: ""
             }
         }
     
