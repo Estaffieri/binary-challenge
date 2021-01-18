@@ -1,10 +1,21 @@
 import React from 'react';
 import "./DetailCard.css";
+import inactiveFav from "../../Assets/inactive-favorite-icon.png";
 
-const DetailCard = ({entry}) => {
+const DetailCard = ({entry, addToFavorites}) => {
+
     return (
-        <section className="card">
-            <h2 className="api-name">{entry.API}</h2>
+        <section className="detail-card">
+            <section className="headline">
+                <h2 className="api-name">{entry.API}</h2>
+                <img
+                 className="inactiveFav"
+                 title="Add to Favorites"
+                 onClick={(e) => addToFavorites(e, entry)}
+                 src={inactiveFav}
+                 alt="inactive favorite icon"
+                 />
+            </section>
             <p className="description">{entry.Description}</p>
             <p className="category">{entry.Category}</p>
             <p className="cors">{entry.Cors}</p>

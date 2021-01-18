@@ -1,4 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  border: border-box;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -28,6 +37,11 @@
   color: #61dafb;
 }
 
+.attribution {
+  font-size: 0.25em;
+  align-self: flex-end;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +49,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.to-favorites-icon {
+ height: 3rem;
+ padding-left: 1vw;
+ padding-top: 1vh;
 }
