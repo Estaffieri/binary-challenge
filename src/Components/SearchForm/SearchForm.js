@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './SearchForm.css';
-import { getAllCategories, getRandomApi } from "../../apiCalls";
+import { getAllCategories } from "../../apiCalls";
 
 /*This is the heart of the application and will provide the most value to our users*/
 
@@ -9,7 +9,6 @@ class SearchForm extends Component {
         super(props)
         this.state = {
             categories: [],
-            random: [],
             category: ""
             }
         }
@@ -21,27 +20,11 @@ class SearchForm extends Component {
             .catch((error) => alert(error.message));
     };
 
-  
    addCategoriesforSearch = () => {
-         const categoryOptions = this.state.categories.map((category, i) => {
+         return this.state.categories.map((category, i) => {
              return <option value={category} key={i}>{category}</option>
        })
-       return categoryOptions
    };
-
-    getNewRandom = async () => {
-        await getRandomApi()
-            .then((data) => this.setState({ random: data.entries }))
-            .catch((error) => alert(error.message));
-    };
-
-//    displayRandomResult = () => {
-//        if (this.state.random.length !== 0) {
-//            return <div>
-//                 <DetailCard {...this.state.random} /> 
-//                 </div>
-//        }
-//    };
 
   handleChange = (e) => {
     e.preventDefault();
@@ -54,7 +37,7 @@ class SearchForm extends Component {
        if (this.state.category !== "") {
            this.props.getSearchResults(this.state.category)
        } else {
-           alert("Please select a category")
+           alert("Please select a category or generate a random API")
        }
    }
 
@@ -72,7 +55,7 @@ class SearchForm extends Component {
                 <div className="button-container">
                         <button onClick={(e) => this.handleSubmit(e)}>Search</button>
                     <div className="spacer"></div>
-                    <button onClick={this.getNewRandom}>Get Random API</button>
+                    {/* <button onClick={(e) => this.handleSubmit(e)}>Get Random API</button> */}
                 </div>
             </form>
         </section>

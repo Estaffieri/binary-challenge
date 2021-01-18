@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Home.css";
 import SearchForm from "../SearchForm/SearchForm";
 import SearchResults from "../SearchResults/SearchResults";
-import { getCategoryEntries } from "../../apiCalls";
+import { getCategoryEntries, getRandomApi } from "../../apiCalls";
 
 /*I see this page as a sibling to Favorites but the search an display lives here */
 
@@ -11,7 +11,8 @@ class Home extends Component {
     constructor() {
         super()
         this.state = {
-            entries: []
+            entries: [],
+            random: []
         }
 
     }
@@ -22,13 +23,20 @@ class Home extends Component {
            .catch((error) => alert(error.message));
     }
 
+    getNewRandom = async () => {
+        await getRandomApi()
+            .then((data) => this.setState({ random: data.entries }))
+            .catch((error) => alert(error.message));
+    };
 
+   
     render() {
         return (
             <section className="Home">
-                <h1>Hello from Home</h1>
-                <SearchForm getSearchResults={this.getSearchResults} />
-                <SearchResults stateOfHome={this.state.entries} />
+                <button onClick={() => this.getNewRandom()}>Get Random API</button>
+                <div className="Spacer"></div>
+                <SearchForm getSearchResults={this.getSearchResults}/>
+                <SearchResults stateOfHome={this.state.entries} randomRequest={this.state.random} />
             </section>
 
         )
