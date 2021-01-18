@@ -13,9 +13,9 @@ class App extends Component {
     }
   }
 
-  addToFavorites = (newFavorite) => {
+  addToFavorites = (e, newFavorite) => {
     this.setState({ favorites: [...this.state.favorites, newFavorite]})
-    console.log("I am add to favorites", { newFavorite }, this.state.favorites)
+    console.log("I am add to favorites",  newFavorite)
 
   }
 
@@ -51,6 +51,7 @@ class App extends Component {
           <Route path="/Favorites">
             <Favorites
             currentFavorites={this.state.favorites}
+            addToFavorites={this.addToFavorites}
             removeFromFavorites={this.removeFromFavorites}
             />
           </Route>

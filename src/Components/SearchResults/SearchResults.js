@@ -9,16 +9,14 @@ class SearchResults extends Component {
         this.state = {}
     }
 
-    // getFavorites = (card, fav) => {
-    //     if (fav === true) {
-    //        this.props.favorites.setState({ favorites: card })
-    //     }
+    // handleFavorite = () => {
+
     // }
 
 
     displayDetailCards = () => {
         return this.props.stateOfHome.map((entry, i) => {
-            return <DetailCard entry={entry} key={i + Date.now()} 
+            return <DetailCard entry={entry} key={i}
                     addToFavorites={this.props.addToFavorites}
                     removeFromFavorites={this.props.removeFromFavorites}/>
         })
