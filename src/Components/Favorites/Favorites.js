@@ -3,16 +3,13 @@ import DetailCard from "../DetailCard/DetailCard";
 import "./Favorites.css";
 import brokenHeart from "../../Assets/broken-heart.png";
 
-
-//knows about currentFavorites and removeFromFavorites from APP
-
-const Favorites = ({ currentFavorites, addToFavorites, removeFromFavorites }) => {
+const Favorites = ({ currentFavorites, addToFavorites}) => {
 
    const displayDetailCards = () => {
         return currentFavorites.map((entry, i) => {
             return <DetailCard entry={entry} key={i}
                 addToFavorites={addToFavorites}
-                removeFromFavorites={removeFromFavorites} />
+                />
         })
     }
    

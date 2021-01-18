@@ -4,8 +4,6 @@ import SearchForm from "../SearchForm/SearchForm";
 import SearchResults from "../SearchResults/SearchResults";
 import { getCategoryEntries, getRandomApi } from "../../apiCalls";
 
-//knows addtoFavorites and removeFromFavorites from APP
-
 class Home extends Component {
     constructor(props) {
         super(props)
@@ -42,7 +40,6 @@ class Home extends Component {
                 <SearchResults
                  stateOfHome={this.state.entries}
                  addToFavorites={this.props.addToFavorites}
-                 removeFromFavorites={this.props.removeFromFavorites} 
                  />
             </section>
 

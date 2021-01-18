@@ -18,11 +18,6 @@ class App extends Component {
     console.log("I am add to favorites",  newFavorite)
 
   }
-
-  removeFromFavorites = () => {
-    console.log("I am remove from favorites")
-  }
-
  
   render () {
     return (
@@ -52,14 +47,13 @@ class App extends Component {
             <Favorites
             currentFavorites={this.state.favorites}
             addToFavorites={this.addToFavorites}
-            removeFromFavorites={this.removeFromFavorites}
             />
           </Route>
 
           <Route expactPath="/">
             <Home
               addToFavorites={this.addToFavorites}
-              removeFromFavorites={this.removeFromFavorites} />
+              />
           </Route>
         </Switch>
         <div>

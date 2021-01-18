@@ -1,14 +1,8 @@
 import React from 'react';
 import "./DetailCard.css";
-import activeFav from "../../Assets/active-favorite-icon.png";
 import inactiveFav from "../../Assets/inactive-favorite-icon.png";
 
-const DetailCard = ({entry, addToFavorites, removeFromFavorites}) => {
-
-    // function flagFavorite = () => {
-
-    // }
-  
+const DetailCard = ({entry, addToFavorites}) => {
 
     return (
         <section className="detail-card">

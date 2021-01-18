@@ -9,16 +9,11 @@ class SearchResults extends Component {
         this.state = {}
     }
 
-    // handleFavorite = () => {
-
-    // }
-
-
     displayDetailCards = () => {
         return this.props.stateOfHome.map((entry, i) => {
             return <DetailCard entry={entry} key={i}
                     addToFavorites={this.props.addToFavorites}
-                    removeFromFavorites={this.props.removeFromFavorites}/>
+                    />
         })
     }
 
