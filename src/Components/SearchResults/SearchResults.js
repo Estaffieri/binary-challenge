@@ -1,30 +1,24 @@
-import React, { Component } from "react";
+import React from "react";
 import "./SearchResults.css";
 import DetailCard from "../DetailCard/DetailCard";
 
 
-class SearchResults extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-    }
-
-    displayDetailCards = () => {
-        return this.props.stateOfHome.map((entry, i) => {
+const SearchResults = ({stateOfHome, addToFavorites}) => {
+  
+   const displayDetailCards = () => {
+        return stateOfHome.map((entry, i) => {
             return <DetailCard entry={entry} key={i}
-                    addToFavorites={this.props.addToFavorites}
+                    addToFavorites={addToFavorites}
                     />
         })
     }
-
-    render() {
         return (
             <div className="search-results-container">
             <h1>Search Results</h1>
-            {this.displayDetailCards()}
+            {displayDetailCards()}
             </div>
         )
-    }
+    
 }
 
 export default SearchResults;
