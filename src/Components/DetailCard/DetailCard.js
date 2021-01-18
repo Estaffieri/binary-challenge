@@ -1,12 +1,14 @@
 import React from 'react';
 import "./DetailCard.css";
 
-const DetailCard = ({entry}) => {
+const DetailCard = ({entry, addToFavorites, removeFromFavorites}) => {
 
 
     function handleClick(e, fav) {
         e.preventDefault()
-    //    this.props.getFavorites(fav)
+    if (fav === true) {
+        addToFavorites(e.target.id)
+    } 
     }
 
 

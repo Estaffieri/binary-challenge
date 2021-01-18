@@ -14,7 +14,8 @@ class Favorites extends Component {
 
     displayCurrentFavorites = () => {
         return this.props.currentFavorites.map((entry, i) => {
-            return <DetailCard entry={entry} key={i} />
+            return <DetailCard entry={entry} key={i}
+                removeFromFavorites={this.props.removeFromFavorites} />
         })
     }
 
@@ -37,7 +38,7 @@ class Favorites extends Component {
         <section className="favorites-container">
             <h1>Hello from Favorites</h1>
             {this.displayCurrentFavorites()}
-            {this.displayEmptyFavorites()}
+            {/* {this.displayEmptyFavorites()} */}
 
             
         </section>

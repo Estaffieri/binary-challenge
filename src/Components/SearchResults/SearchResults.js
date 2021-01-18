@@ -9,11 +9,11 @@ class SearchResults extends Component {
         this.state = {}
     }
 
-    getFavorites = (card, fav) => {
-        if (fav === true) {
-           this.props.favorites.setState({ favorites: card })
-        }
-    }
+    // getFavorites = (card, fav) => {
+    //     if (fav === true) {
+    //        this.props.favorites.setState({ favorites: card })
+    //     }
+    // }
 
 
     displayDetailCards = () => {
