@@ -4,9 +4,11 @@ import SearchForm from "../SearchForm/SearchForm";
 import SearchResults from "../SearchResults/SearchResults";
 import { getCategoryEntries, getRandomApi } from "../../apiCalls";
 
+//knows addtoFavorites and removeFromFavorites from APP
+
 class Home extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             entries: [],
         }
@@ -34,8 +36,14 @@ class Home extends Component {
             <section className="Home">
                 <button onClick={() => this.getNewRandom(true)}>Get Random API</button>
                 <div className="Spacer"></div>
-                <SearchForm getSearchResults={this.getSearchResults}/>
-                <SearchResults stateOfHome={this.state.entries} />
+                <SearchForm
+                 getSearchResults={this.getSearchResults}
+                 />
+                <SearchResults
+                 stateOfHome={this.state.entries}
+                 addToFavorites={this.props.addToFavorites}
+                 removeFromFavorites={this.props.removeFromFavorites} 
+                 />
             </section>
 
         )

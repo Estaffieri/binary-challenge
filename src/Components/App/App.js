@@ -13,11 +13,12 @@ class App extends Component {
   }
 
   addToFavorites = () => {
+    console.log("I am add to favorites")
 
   }
 
   removeFromFavorites = () => {
-
+    console.log("I am remove from favorites")
   }
 
  
@@ -44,13 +45,14 @@ class App extends Component {
           <Route path="/Favorites">
             <Favorites
             currentFavorites={this.state.favorites}
-            addToFavorites={this.addToFavorites}
             removeFromFavorites={this.removeFromFavorites}
             />
           </Route>
 
           <Route expactPath="/">
-            <Home />
+            <Home
+              addToFavorites={this.addToFavorites}
+              removeFromFavorites={this.removeFromFavorites} />
           </Route>
         </Switch>
 
