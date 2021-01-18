@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import './SearchForm.css';
 import { getAllCategories } from "../../apiCalls";
 
-/*This is the heart of the application and will provide the most value to our users*/
-
 class SearchForm extends Component {
     constructor(props) {
         super(props)
@@ -11,8 +9,7 @@ class SearchForm extends Component {
             categories: [],
             category: ""
             }
-        }
-    
+    };
 
     componentDidMount = async () => {
         await getAllCategories()
@@ -20,29 +17,27 @@ class SearchForm extends Component {
             .catch((error) => alert(error.message));
     };
 
-   addCategoriesforSearch = () => {
-         return this.state.categories.map((category, i) => {
-             return <option value={category} key={i}>{category}</option>
-       })
-   };
+    addCategoriesforSearch = () => {
+        return this.state.categories.map((category, i) => {
+            return <option value={category} key={i}>{category}</option>
+        })
+    };
 
-  handleChange = (e) => {
+    handleChange = (e) => {
     e.preventDefault();
-      this.setState({[e.target.name]: e.target.value})
+        this.setState({[e.target.name]: e.target.value})
+    };
 
-   }
-
-   handleSubmit = (e, isRandom) => {
-       e.preventDefault()
-       if (this.state.category !== "") {
-           this.props.getSearchResults(this.state.category, isRandom)
-       } else {
-           alert("Please select a category or generate a random API")
-       }
-   }
+    handleSubmit = (e, isRandom) => {
+        e.preventDefault()
+        if (this.state.category !== "") {
+            this.props.getSearchResults(this.state.category, isRandom)
+        } else {
+            alert("Please select a category or generate a random API")
+        }
+    }
 
     render () {   
-    
         return (
         <section className="api-results-container">
             <form role="search" className="search-box">
@@ -51,16 +46,13 @@ class SearchForm extends Component {
                     <select name="category" id="category-selection" onChange={this.handleChange}>
                         <option value="">Pick One</option>
                     {this.addCategoriesforSearch()}
-                </select>
-                <div className="button-container">
+                    </select>
+                    <div className="button-container">
                         <button onClick={(e) => this.handleSubmit(e, false)}>Search</button>
-                    <div className="spacer"></div>
-                    {/* <button onClick={(e) => this.handleSubmit(e)}>Get Random API</button> */}
-                </div>
+                        <div className="spacer"></div>
+                    </div>
             </form>
         </section>
-
-          
         )
     }
 }

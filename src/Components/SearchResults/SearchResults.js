@@ -11,10 +11,9 @@ class SearchResults extends Component {
 
 
     displayDetailCards = () => {
-    
-            return this.props.stateOfHome.map((entry, i) => {
-                return <DetailCard entry={entry} key={i} />
-            })
+        return this.props.stateOfHome.map((entry, i) => {
+            return <DetailCard entry={entry} key={i} />
+        })
     }
 
     render() {

@@ -4,9 +4,6 @@ import SearchForm from "../SearchForm/SearchForm";
 import SearchResults from "../SearchResults/SearchResults";
 import { getCategoryEntries, getRandomApi } from "../../apiCalls";
 
-/*I see this page as a sibling to Favorites but the search an display lives here */
-
-
 class Home extends Component {
     constructor() {
         super()

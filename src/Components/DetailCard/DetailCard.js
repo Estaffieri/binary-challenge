@@ -1,9 +1,6 @@
 import React from 'react';
 import "./DetailCard.css";
 
-/*This is our smallest component and should just organize
- and style the data from the API about the API */
-
 const DetailCard = ({entry}) => {
     return (
         <section className="card">

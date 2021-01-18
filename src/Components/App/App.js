@@ -4,10 +4,6 @@ import Home from "../Home/Home";
 import Favorites from "../Favorites/Favorites";
 import { Route, NavLink, Switch } from "react-router-dom";
 
-/*This should just be a switchboard between components
-Acceptance or integration tests should be in the app testing file */
-
-
 class App extends Component {
   constructor() {
     super()
@@ -26,40 +22,40 @@ class App extends Component {
 
  
   render () {
-  return (
-    <div className="App">
-      <header>
+    return (
+      <div className="App">
+        <header>
 
-        <Route>
-          <NavLink to="/">
-            <h1>APIs for Dayssssss</h1>
+          <Route>
+            <NavLink to="/">
+              <h1>APIs for Dayssssss</h1>
+            </NavLink>
+          </Route>
+
+          <Route>
+          <NavLink to="/Favorites">
+              ❤️
           </NavLink>
         </Route>
 
-        <Route>
-        <NavLink to="/Favorites">
-            ❤️
-        </NavLink>
-      </Route>
+        </header>
 
-      </header>
+        <Switch>
+          <Route path="/Favorites">
+            <Favorites
+            currentFavorites={this.state.favorites}
+            addToFavorites={this.addToFavorites}
+            removeFromFavorites={this.removeFromFavorites}
+            />
+          </Route>
 
-      <Switch>
-        <Route path="/Favorites">
-          <Favorites
-          currentFavorites={this.state.favorites}
-          addToFavorites={this.addToFavorites}
-          removeFromFavorites={this.removeFromFavorites}
-           />
-        </Route>
+          <Route expactPath="/">
+            <Home />
+          </Route>
+        </Switch>
 
-        <Route expactPath="/">
-          <Home />
-        </Route>
-      </Switch>
-
-    </div>
-  );
+      </div>
+    );
 }
 }
 
