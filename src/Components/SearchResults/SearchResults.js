@@ -8,11 +8,19 @@ class SearchResults extends Component {
         super(props)
         this.state = {}
     }
+
+    displayDetailCards = () => {
+        console.log(this.props.stateOfHome)
+        return this.props.stateOfHome.map((entry, i) => {
+            return <DetailCard entry={entry} key={i} />
+        })
+    }
+
     render() {
         return (
             <div>
-            <h1>So picky</h1>
-            <DetailCard />
+            <h1>Search Results</h1>
+            {this.displayDetailCards()}
             </div>
         )
     }

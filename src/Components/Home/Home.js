@@ -22,12 +22,13 @@ class Home extends Component {
            .catch((error) => alert(error.message));
     }
 
+
     render() {
         return (
             <section className="Home">
                 <h1>Hello from Home</h1>
                 <SearchForm getSearchResults={this.getSearchResults} />
-                <SearchResults showMe={this.state.entries} />
+                <SearchResults stateOfHome={this.state.entries} />
             </section>
 
         )
