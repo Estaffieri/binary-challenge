@@ -4,16 +4,14 @@ import activeFav from "../../Assets/active-favorite-icon.png";
 import inactiveFav from "../../Assets/inactive-favorite-icon.png";
 
 const DetailCard = ({entry, addToFavorites, removeFromFavorites}) => {
-
+  
 
     function handleClick(e, fav) {
         e.preventDefault()
-    if (fav === true) {
-        addToFavorites(e.target.id)
-    } 
+        if (fav === true) {
+            addToFavorites(e.target.id)
+        } 
     }
-
-
 
     return (
         <section className="detail-card">

@@ -18,7 +18,7 @@ class SearchResults extends Component {
 
     displayDetailCards = () => {
         return this.props.stateOfHome.map((entry, i) => {
-            return <DetailCard entry={entry} key={i} 
+            return <DetailCard entry={entry} key={i + Date.now()} 
                     addToFavorites={this.props.addToFavorites}
                     removeFromFavorites={this.props.removeFromFavorites}/>
         })
