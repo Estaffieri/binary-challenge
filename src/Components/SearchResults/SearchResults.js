@@ -9,18 +9,12 @@ class SearchResults extends Component {
         this.state = {}
     }
 
+
     displayDetailCards = () => {
-        console.log(this.props.stateOfHome)
-        console.log(this.props.randomRequest)
-        if (this.props.randomRequest.length === 0) {
+    
             return this.props.stateOfHome.map((entry, i) => {
                 return <DetailCard entry={entry} key={i} />
             })
-        } else {
-            return this.props.randomRequest.map((entry, i) => {
-                return <DetailCard entry={entry} key={i} />
-            })
-        }
     }
 
     render() {

@@ -32,10 +32,10 @@ class SearchForm extends Component {
 
    }
 
-   handleSubmit = (e) => {
+   handleSubmit = (e, isRandom) => {
        e.preventDefault()
        if (this.state.category !== "") {
-           this.props.getSearchResults(this.state.category)
+           this.props.getSearchResults(this.state.category, isRandom)
        } else {
            alert("Please select a category or generate a random API")
        }
@@ -53,7 +53,7 @@ class SearchForm extends Component {
                     {this.addCategoriesforSearch()}
                 </select>
                 <div className="button-container">
-                        <button onClick={(e) => this.handleSubmit(e)}>Search</button>
+                        <button onClick={(e) => this.handleSubmit(e, false)}>Search</button>
                     <div className="spacer"></div>
                     {/* <button onClick={(e) => this.handleSubmit(e)}>Get Random API</button> */}
                 </div>
