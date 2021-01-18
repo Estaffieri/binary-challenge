@@ -26,7 +26,7 @@ class SearchResults extends Component {
 
     render() {
         return (
-            <div>
+            <div className="search-results-container">
             <h1>Search Results</h1>
             {this.displayDetailCards()}
             </div>

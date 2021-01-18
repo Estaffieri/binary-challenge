@@ -1,5 +1,7 @@
 import React from 'react';
 import "./DetailCard.css";
+import activeFav from "../../Assets/active-favorite-icon.png";
+import inactiveFav from "../../Assets/inactive-favorite-icon.png";
 
 const DetailCard = ({entry, addToFavorites, removeFromFavorites}) => {
 
@@ -14,10 +16,16 @@ const DetailCard = ({entry, addToFavorites, removeFromFavorites}) => {
 
 
     return (
-        <section className="card">
+        <section className="detail-card">
             <section className="headline">
-                <button className="favorite-button" onClick={(e) => handleClick(e, true)}>❤️</button>
                 <h2 className="api-name">{entry.API}</h2>
+                <img
+                 className="inactiveFav"
+                 title="Add to Favorites"
+                 onClick={(e) => handleClick(e, true)}
+                 src={inactiveFav}
+                 alt="inactive favorite icon"
+                 />
             </section>
             <p className="description">{entry.Description}</p>
             <p className="category">{entry.Category}</p>

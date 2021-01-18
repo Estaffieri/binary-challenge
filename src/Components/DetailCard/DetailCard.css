@@ -1,0 +1,35 @@
+.activeFav {
+    display: flex;
+    height: 2rem;
+    padding-left: 1vw;
+    padding-top: 1vh;
+    
+}
+
+.api-name {
+    font-size: 1.5rem;
+}
+
+.detail-card {
+    display: flex;
+    border: 2px solid black;
+    flex-direction: column;
+    padding: 1rem;
+    width: 50vh;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.inactiveFav {
+    display: flex;
+    height: 2rem;
+    padding-left: 1vw;
+    padding-top: 1vh;
+}

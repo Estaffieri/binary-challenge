@@ -14,8 +14,8 @@ class App extends Component {
   }
 
   addToFavorites = (newFavorite) => {
-    console.log("I am add to favorites", {newFavorite})
     this.setState({ favorites: [...this.state.favorites, newFavorite]})
+    console.log("I am add to favorites", { newFavorite }, this.state.favorites)
 
   }
 
@@ -62,7 +62,7 @@ class App extends Component {
           </Route>
         </Switch>
         <div>
-          <p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+          <p className="attribution">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
         </div>
       </div>
     );
