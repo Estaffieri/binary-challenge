@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from 'react-router-dom';
 import Favorites from "./Favorites";
 
-describe("DetailCards", () => {
+describe("FAVORITES TESTS", () => {
 
     describe("Unit Tests", () => {
         

@@ -4,7 +4,7 @@ import  userEvent  from "@testing-library/user-event"
 import DetailCard from "./DetailCard";
 
 
-describe("DetailCards", () => {
+describe("DETAILCARD TESTS", () => {
   
     describe("Unit Tests", () => {
         const mockAddToFavorites = jest.fn()
