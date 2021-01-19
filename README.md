@@ -5,7 +5,7 @@
   - MVP: Display data from the API & Allow data manipulation
 
 ## About This Project
-![WireFrame]("./Assets/WireFrame-BC.png")
+<img src="src/Assets/WireFrame-BC.png" alt="rough wireframe of Find An API" width="800">
 
 This modest project application build allows a user to select from a drop-down of categories and see the details of each API for that category. They can also have fun with it and just randomly generate an API. Each detail card allows the user to favorite it for reference later! The selected cards can be seen in the favorites view. 
 
@@ -18,4 +18,5 @@ This final project for Mod 3 of Turing's Frontend program was a challenge becaus
   3. Start application ```npm start```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
