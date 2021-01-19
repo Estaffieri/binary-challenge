@@ -44,7 +44,7 @@ class SearchForm extends Component {
             <form role="search" className="search-box">
                 <label htmlFor="search-box">Search for an API by Category:</label>
                 <p>Select A Category:</p>
-                    <select name="category" id="category-selection" onChange={this.handleChange}>
+                    <select data-testid="drop-down" name="category" id="category-selection" onChange={this.handleChange}>
                         <option value="">Pick One</option>
                     {this.addCategoriesforSearch()}
                     </select>
