@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './SearchForm.css';
 import { getAllCategories } from "../../apiCalls";
+import PropTypes from 'prop-types';
 
 class SearchForm extends Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class SearchForm extends Component {
             <form role="search" className="search-box">
                 <label htmlFor="search-box">Search for an API by Category:</label>
                 <p>Select A Category:</p>
-                    <select name="category" id="category-selection" onChange={this.handleChange}>
+                    <select data-testid="drop-down" name="category" id="category-selection" onChange={this.handleChange}>
                         <option value="">Pick One</option>
                     {this.addCategoriesforSearch()}
                     </select>
@@ -59,3 +60,7 @@ class SearchForm extends Component {
 
 
 export default SearchForm;
+
+SearchForm.propTypes = {
+    getSearchResults: PropTypes.func
+}

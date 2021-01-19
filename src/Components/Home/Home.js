@@ -3,6 +3,7 @@ import "./Home.css";
 import SearchForm from "../SearchForm/SearchForm";
 import SearchResults from "../SearchResults/SearchResults";
 import { getCategoryEntries, getRandomApi } from "../../apiCalls";
+import PropTypes from 'prop-types';
 
 class Home extends Component {
     constructor(props) {
@@ -48,3 +49,7 @@ class Home extends Component {
 }
 
 export default Home;
+
+Home.propTypes = {
+    addToFavorites: PropTypes.func,
+}
