@@ -1,6 +1,7 @@
 import React from "react";
 import "./SearchResults.css";
 import DetailCard from "../DetailCard/DetailCard";
+import PropTypes from 'prop-types';
 
 
 const SearchResults = ({stateOfHome, addToFavorites}) => {
@@ -21,4 +22,10 @@ const SearchResults = ({stateOfHome, addToFavorites}) => {
     
 }
 
+
 export default SearchResults;
+
+    SearchResults.propTypes = {
+        stateOfHome: PropTypes.array,
+        addToFavorites: PropTypes.func,
+    }

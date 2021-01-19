@@ -2,6 +2,7 @@ import React from "react";
 import DetailCard from "../DetailCard/DetailCard";
 import "./Favorites.css";
 import brokenHeart from "../../Assets/broken-heart.png";
+import PropTypes from 'prop-types';
 
 const Favorites = ({ currentFavorites, addToFavorites }) => {
 
@@ -31,3 +32,8 @@ const Favorites = ({ currentFavorites, addToFavorites }) => {
 }
 
 export default Favorites;
+
+Favorites.propTypes = {
+    currentFavorites: PropTypes.array,
+    addToFavorites: PropTypes.func
+}

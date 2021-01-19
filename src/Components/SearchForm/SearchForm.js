@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './SearchForm.css';
 import { getAllCategories } from "../../apiCalls";
+import PropTypes from 'prop-types';
 
 class SearchForm extends Component {
     constructor(props) {
@@ -59,3 +60,7 @@ class SearchForm extends Component {
 
 
 export default SearchForm;
+
+SearchForm.propTypes = {
+    getSearchResults: PropTypes.func
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import "./DetailCard.css";
 import inactiveFav from "../../Assets/inactive-favorite-icon.png";
+import PropTypes from 'prop-types';
 
 const DetailCard = ({entry, addToFavorites}) => {
 
@@ -28,3 +29,8 @@ const DetailCard = ({entry, addToFavorites}) => {
 
 
 export default DetailCard;
+
+DetailCard.propTypes = {
+    entry: PropTypes.object,
+    addToFavorites: PropTypes.func
+}
