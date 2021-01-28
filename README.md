@@ -17,6 +17,7 @@ This final project for Mod 3 of Turing's Frontend program was a challenge becaus
   2. Install NPM dependancies ```npm install```
   3. Start application ```npm start```
 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
